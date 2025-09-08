@@ -56,6 +56,101 @@ INSERT INTO `customers` VALUES (1,'Fred','Fish',NULL,'FFish@gmail.com'),(2,'Larr
 UNLOCK TABLES;
 
 --
+-- Table structure for table `elevator_project_schedule`
+--
+
+DROP TABLE IF EXISTS `elevator_project_schedule`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `elevator_project_schedule` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `project_id` int DEFAULT NULL,
+  `target_handover` date DEFAULT NULL,
+  `unloading_equipment_date` date DEFAULT NULL,
+  `unloading_equipment_done` tinyint(1) DEFAULT '0',
+  `scaffolding_date` date DEFAULT NULL,
+  `scaffolding_done` tinyint(1) DEFAULT '0',
+  `hauling_date` date DEFAULT NULL,
+  `hauling_done` tinyint(1) DEFAULT '0',
+  `template_date` date DEFAULT NULL,
+  `template_done` tinyint(1) DEFAULT '0',
+  `boring_holes_date` date DEFAULT NULL,
+  `boring_holes_done` tinyint(1) DEFAULT '0',
+  `rail_bracket_date` date DEFAULT NULL,
+  `rail_bracket_done` tinyint(1) DEFAULT '0',
+  `guide_rail_car_date` date DEFAULT NULL,
+  `guide_rail_car_done` tinyint(1) DEFAULT '0',
+  `guide_rail_cwt_date` date DEFAULT NULL,
+  `guide_rail_cwt_done` tinyint(1) DEFAULT '0',
+  `guide_rail_gauge_date` date DEFAULT NULL,
+  `guide_rail_gauge_done` tinyint(1) DEFAULT '0',
+  `door_sills_date` date DEFAULT NULL,
+  `door_sills_done` tinyint(1) DEFAULT '0',
+  `door_jamb_date` date DEFAULT NULL,
+  `door_jamb_done` tinyint(1) DEFAULT '0',
+  `door_frame_date` date DEFAULT NULL,
+  `door_frame_done` tinyint(1) DEFAULT '0',
+  `machine_traction_date` date DEFAULT NULL,
+  `machine_traction_done` tinyint(1) DEFAULT '0',
+  `machine_beams_date` date DEFAULT NULL,
+  `machine_beams_done` tinyint(1) DEFAULT '0',
+  `machine_governor_date` date DEFAULT NULL,
+  `machine_governor_done` tinyint(1) DEFAULT '0',
+  `control_panel_date` date DEFAULT NULL,
+  `control_panel_done` tinyint(1) DEFAULT '0',
+  `car_accessories_date` date DEFAULT NULL,
+  `car_accessories_done` tinyint(1) DEFAULT '0',
+  `car_wiring_date` date DEFAULT NULL,
+  `car_wiring_done` tinyint(1) DEFAULT '0',
+  `travelling_cable_date` date DEFAULT NULL,
+  `travelling_cable_done` tinyint(1) DEFAULT '0',
+  `counterweight_date` date DEFAULT NULL,
+  `counterweight_done` tinyint(1) DEFAULT '0',
+  `ropes_hoisting_date` date DEFAULT NULL,
+  `ropes_hoisting_done` tinyint(1) DEFAULT '0',
+  `ropes_governor_date` date DEFAULT NULL,
+  `ropes_governor_done` tinyint(1) DEFAULT '0',
+  `ropes_compensating_date` date DEFAULT NULL,
+  `ropes_compensating_done` tinyint(1) DEFAULT '0',
+  `wiring_mr_date` date DEFAULT NULL,
+  `wiring_mr_done` tinyint(1) DEFAULT '0',
+  `wiring_hoistway_date` date DEFAULT NULL,
+  `wiring_hoistway_done` tinyint(1) DEFAULT '0',
+  `pit_ladder_date` date DEFAULT NULL,
+  `pit_ladder_done` tinyint(1) DEFAULT '0',
+  `initial_test_date` date DEFAULT NULL,
+  `initial_test_done` tinyint(1) DEFAULT '0',
+  `slow_speed_date` date DEFAULT NULL,
+  `slow_speed_done` tinyint(1) DEFAULT '0',
+  `high_speed_date` date DEFAULT NULL,
+  `high_speed_done` tinyint(1) DEFAULT '0',
+  `load_test_date` date DEFAULT NULL,
+  `load_test_done` tinyint(1) DEFAULT '0',
+  `final_adjust_date` date DEFAULT NULL,
+  `final_adjust_done` tinyint(1) DEFAULT '0',
+  `features_test_date` date DEFAULT NULL,
+  `features_test_done` tinyint(1) DEFAULT '0',
+  `handover_date` date DEFAULT NULL,
+  `handover_done` tinyint(1) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `project_id_fk` (`project_id`),
+  CONSTRAINT `project_id_fk` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `elevator_project_schedule`
+--
+
+LOCK TABLES `elevator_project_schedule` WRITE;
+/*!40000 ALTER TABLE `elevator_project_schedule` DISABLE KEYS */;
+INSERT INTO `elevator_project_schedule` VALUES (9,44,NULL,'2025-05-17',0,'2025-05-18',0,'2025-05-20',0,'2025-05-22',0,'2025-05-24',0,'2025-05-25',0,'2025-05-27',0,'2025-05-29',0,'2025-05-31',0,'2025-06-01',0,'2025-06-03',0,'2025-06-05',0,'2025-06-07',0,'2025-06-09',0,'2025-06-11',0,'2025-06-13',0,'2025-06-15',0,'2025-06-17',0,'2025-06-18',0,'2025-06-20',0,'2025-06-22',0,'2025-06-24',0,'2025-06-26',0,'2025-06-27',0,'2025-06-28',0,'2025-06-29',0,'2025-07-01',0,'2025-07-04',0,'2025-07-06',0,'2025-07-08',0,'2025-07-10',0,'2025-07-12',0,'2025-07-14',0,'2025-09-08 09:02:23','2025-09-08 09:02:23'),(10,266,NULL,'2025-07-22',0,'2025-07-23',0,'2025-07-25',0,'2025-07-27',0,'2025-07-29',0,'2025-07-30',0,'2025-08-01',0,'2025-08-03',0,'2025-08-05',0,'2025-08-06',0,'2025-08-08',0,'2025-08-10',0,'2025-08-12',0,'2025-08-14',0,'2025-08-16',0,'2025-08-18',0,'2025-08-20',0,'2025-08-22',0,'2025-08-23',0,'2025-08-25',0,'2025-08-27',0,'2025-08-29',0,'2025-08-31',0,'2025-09-01',0,'2025-09-02',0,'2025-09-03',0,'2025-09-05',0,'2025-09-08',0,'2025-09-10',0,'2025-09-12',0,'2025-09-14',0,'2025-09-16',0,'2025-09-18',0,'2025-09-08 13:58:50','2025-09-08 13:58:50'),(11,269,NULL,'2025-09-02',0,'2025-09-03',0,'2025-09-05',0,'2025-09-07',0,'2025-09-09',0,'2025-09-10',0,'2025-09-12',0,'2025-09-14',0,'2025-09-16',0,'2025-09-17',0,'2025-09-19',0,'2025-09-21',0,'2025-09-23',0,'2025-09-25',0,'2025-09-27',0,'2025-09-29',0,'2025-10-01',0,'2025-10-03',0,'2025-10-04',0,'2025-10-06',0,'2025-10-08',0,'2025-10-10',0,'2025-10-12',0,'2025-10-13',0,'2025-10-14',0,'2025-10-15',0,'2025-10-17',0,'2025-10-20',0,'2025-10-22',0,'2025-10-24',0,'2025-10-26',0,'2025-10-28',0,'2025-10-30',0,'2025-09-08 14:06:35','2025-09-08 14:06:35'),(12,1,NULL,'2025-06-10',0,'2025-06-11',0,'2025-06-13',0,'2025-06-15',0,'2025-06-17',0,'2025-06-18',0,'2025-06-20',0,'2025-06-22',0,'2025-06-24',0,'2025-06-25',0,'2025-06-27',0,'2025-06-29',0,'2025-07-01',0,'2025-07-03',0,'2025-07-05',0,'2025-07-07',0,'2025-07-09',0,'2025-07-11',0,'2025-07-12',0,'2025-07-14',0,'2025-07-16',0,'2025-07-18',0,'2025-07-20',0,'2025-07-21',0,'2025-07-22',0,'2025-07-23',0,'2025-07-25',0,'2025-07-28',0,'2025-07-30',0,'2025-08-01',0,'2025-08-03',0,'2025-08-05',0,'2025-08-07',0,'2025-09-08 15:27:26','2025-09-08 15:27:26'),(13,44,NULL,'2025-05-17',0,'2025-05-18',0,'2025-05-20',0,'2025-05-22',0,'2025-05-24',0,'2025-05-25',0,'2025-05-27',0,'2025-05-29',0,'2025-05-31',0,'2025-06-01',0,'2025-06-03',0,'2025-06-05',0,'2025-06-07',0,'2025-06-09',0,'2025-06-11',0,'2025-06-13',0,'2025-06-15',0,'2025-06-17',0,'2025-06-18',0,'2025-06-20',0,'2025-06-22',0,'2025-06-24',0,'2025-06-26',0,'2025-06-27',0,'2025-06-28',0,'2025-06-29',0,'2025-07-01',0,'2025-07-04',0,'2025-07-06',0,'2025-07-08',0,'2025-07-10',0,'2025-07-12',0,'2025-07-14',0,'2025-09-08 15:27:32','2025-09-08 15:27:32'),(14,45,NULL,'2025-05-22',0,'2025-05-23',0,'2025-05-25',0,'2025-05-27',0,'2025-05-29',0,'2025-05-30',0,'2025-06-01',0,'2025-06-03',0,'2025-06-05',0,'2025-06-06',0,'2025-06-08',0,'2025-06-10',0,'2025-06-12',0,'2025-06-14',0,'2025-06-16',0,'2025-06-18',0,'2025-06-20',0,'2025-06-22',0,'2025-06-23',0,'2025-06-25',0,'2025-06-27',0,'2025-06-29',0,'2025-07-01',0,'2025-07-02',0,'2025-07-03',0,'2025-07-04',0,'2025-07-06',0,'2025-07-09',0,'2025-07-11',0,'2025-07-13',0,'2025-07-15',0,'2025-07-17',0,'2025-07-19',0,'2025-09-08 15:27:37','2025-09-08 15:27:37'),(15,46,NULL,'2025-05-07',0,'2025-05-08',0,'2025-05-10',0,'2025-05-12',0,'2025-05-14',0,'2025-05-15',0,'2025-05-17',0,'2025-05-19',0,'2025-05-21',0,'2025-05-22',0,'2025-05-24',0,'2025-05-26',0,'2025-05-28',0,'2025-05-30',0,'2025-06-01',0,'2025-06-03',0,'2025-06-05',0,'2025-06-07',0,'2025-06-08',0,'2025-06-10',0,'2025-06-12',0,'2025-06-14',0,'2025-06-16',0,'2025-06-17',0,'2025-06-18',0,'2025-06-19',0,'2025-06-21',0,'2025-06-24',0,'2025-06-26',0,'2025-06-28',0,'2025-06-30',0,'2025-07-02',0,'2025-07-04',0,'2025-09-08 15:27:44','2025-09-08 15:27:44'),(16,47,NULL,'2025-04-27',0,'2025-04-28',0,'2025-04-30',0,'2025-05-02',0,'2025-05-04',0,'2025-05-05',0,'2025-05-07',0,'2025-05-09',0,'2025-05-11',0,'2025-05-12',0,'2025-05-14',0,'2025-05-16',0,'2025-05-18',0,'2025-05-20',0,'2025-05-22',0,'2025-05-24',0,'2025-05-26',0,'2025-05-28',0,'2025-05-29',0,'2025-05-31',0,'2025-06-02',0,'2025-06-04',0,'2025-06-06',0,'2025-06-07',0,'2025-06-08',0,'2025-06-09',0,'2025-06-11',0,'2025-06-14',0,'2025-06-16',0,'2025-06-18',0,'2025-06-20',0,'2025-06-22',0,'2025-06-24',0,'2025-09-08 15:27:51','2025-09-08 15:27:51'),(17,48,NULL,'2025-05-12',0,'2025-05-13',0,'2025-05-15',0,'2025-05-17',0,'2025-05-19',0,'2025-05-20',0,'2025-05-22',0,'2025-05-24',0,'2025-05-26',0,'2025-05-27',0,'2025-05-29',0,'2025-05-31',0,'2025-06-02',0,'2025-06-04',0,'2025-06-06',0,'2025-06-08',0,'2025-06-10',0,'2025-06-12',0,'2025-06-13',0,'2025-06-15',0,'2025-06-17',0,'2025-06-19',0,'2025-06-21',0,'2025-06-22',0,'2025-06-23',0,'2025-06-24',0,'2025-06-26',0,'2025-06-29',0,'2025-07-01',0,'2025-07-03',0,'2025-07-05',0,'2025-07-07',0,'2025-07-09',0,'2025-09-08 15:27:57','2025-09-08 15:27:57'),(18,265,NULL,'2025-07-05',0,'2025-07-06',0,'2025-07-08',0,'2025-07-10',0,'2025-07-12',0,'2025-07-13',0,'2025-07-15',0,'2025-07-17',0,'2025-07-19',0,'2025-07-20',0,'2025-07-22',0,'2025-07-24',0,'2025-07-26',0,'2025-07-28',0,'2025-07-30',0,'2025-08-01',0,'2025-08-03',0,'2025-08-05',0,'2025-08-06',0,'2025-08-08',0,'2025-08-10',0,'2025-08-12',0,'2025-08-14',0,'2025-08-15',0,'2025-08-16',0,'2025-08-17',0,'2025-08-19',0,'2025-08-22',0,'2025-08-24',0,'2025-08-26',0,'2025-08-28',0,'2025-08-30',0,'2025-09-01',0,'2025-09-08 15:28:38','2025-09-08 15:28:38'),(19,266,NULL,'2025-07-22',0,'2025-07-23',0,'2025-07-25',0,'2025-07-27',0,'2025-07-29',0,'2025-07-30',0,'2025-08-01',0,'2025-08-03',0,'2025-08-05',0,'2025-08-06',0,'2025-08-08',0,'2025-08-10',0,'2025-08-12',0,'2025-08-14',0,'2025-08-16',0,'2025-08-18',0,'2025-08-20',0,'2025-08-22',0,'2025-08-23',0,'2025-08-25',0,'2025-08-27',0,'2025-08-29',0,'2025-08-31',0,'2025-09-01',0,'2025-09-02',0,'2025-09-03',0,'2025-09-05',0,'2025-09-08',0,'2025-09-10',0,'2025-09-12',0,'2025-09-14',0,'2025-09-16',0,'2025-09-18',0,'2025-09-08 15:28:44','2025-09-08 15:28:44'),(20,267,NULL,'2025-08-14',0,'2025-08-15',0,'2025-08-17',0,'2025-08-19',0,'2025-08-21',0,'2025-08-22',0,'2025-08-24',0,'2025-08-26',0,'2025-08-28',0,'2025-08-29',0,'2025-08-31',0,'2025-09-02',0,'2025-09-04',0,'2025-09-06',0,'2025-09-08',0,'2025-09-10',0,'2025-09-12',0,'2025-09-14',0,'2025-09-15',0,'2025-09-17',0,'2025-09-19',0,'2025-09-21',0,'2025-09-23',0,'2025-09-24',0,'2025-09-25',0,'2025-09-26',0,'2025-09-28',0,'2025-10-01',0,'2025-10-03',0,'2025-10-05',0,'2025-10-07',0,'2025-10-09',0,'2025-10-11',0,'2025-09-08 15:28:51','2025-09-08 15:28:51');
+/*!40000 ALTER TABLE `elevator_project_schedule` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `employees`
 --
 
@@ -68,18 +163,15 @@ CREATE TABLE `employees` (
   `employee_id` int NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
-  `hourly_pay` decimal(5,2) DEFAULT NULL,
-  `salary` decimal(10,2) DEFAULT NULL,
   `job` varchar(25) DEFAULT NULL,
   `hire_date` date DEFAULT NULL,
-  `supervisor_id` int DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT '0',
   `team_id` int DEFAULT (NULL),
   `refresh_token` varchar(550) DEFAULT NULL,
   PRIMARY KEY (`employee_id`),
   KEY `teamId_foreignkey` (`team_id`),
   CONSTRAINT `teamId_foreignkey` FOREIGN KEY (`team_id`) REFERENCES `teams` (`team_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,90 +180,9 @@ CREATE TABLE `employees` (
 
 LOCK TABLES `employees` WRITE;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
-INSERT INTO `employees` VALUES ('EugeneK','12345678',1,'Eugene','Krab',100.00,208000.00,'manager','2023-01-02',NULL,0,NULL,'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkV1Z2VuZUsiLCJpYXQiOjE3NTY5NzU4OTYsImV4cCI6MTc1NzA2MjI5Nn0.hCPIOcFobX4x1eAYvwGR_3t4NW9KkM97_4tqz6ch0Gk'),('SquidwardT','12345678',2,'Squidward','Tentacles',16.00,33280.00,'Project Manager','2023-01-03',5,0,NULL,NULL),('SpongebobS','12345678',3,'Spongebob','Squarepants',13.50,28080.00,'Project Engineer','2024-01-04',5,0,1,NULL),('PatrickS','12345678',4,'Patrick','Star',13.50,28080.00,'Project Engineer','2023-01-05',5,0,2,NULL),('SandyC','12345678',5,'Sandy','Cheeks',18.25,37960.00,'Project Engineer','2023-01-06',1,0,3,NULL),('SheldonP','12345678',6,'Sheldon','Plankton',10.00,20800.00,'Project Engineer','2023-01-07',5,0,4,NULL),('PearlK','12345678',7,'Pearl','Krabs',25.00,52000.00,'Project Engineer','2023-02-01',1,1,NULL,NULL),('KarenP','12345678',8,'Karen','Plankton',30.00,62400.00,'Project Engineer','2022-11-15',6,1,NULL,NULL),('LarryL','12345678',9,'Larry','Lobster',14.00,29120.00,'Project Engineer','2023-03-10',5,1,NULL,NULL),('NatP','12345678',10,'Nat','Peterson',13.75,28600.00,'Foreman','2023-04-05',5,1,1,NULL),('Tom','12345678',11,'Tom','Johnson',12.50,26000.00,'Technician','2023-05-12',5,1,1,NULL),('Fred','12345678',12,'Fred','Fish',12.50,26000.00,'Technician','2023-05-15',5,1,1,NULL),('Nebby','12345678',13,'Nebby','Star',11.00,22880.00,'Foreman','2023-06-01',5,1,2,NULL),('Barny','12345678',14,'Barny','Fish',11.00,22880.00,'Technician','2023-06-10',5,1,2,NULL),('Martha','12345678',15,'Marthanah','Starfish',13.00,27040.00,'Technician','2023-07-01',5,1,2,NULL),('Betsy','12345678',16,'Betsy','Krabs',13.25,27560.00,'Technician','2023-07-15',5,1,2,NULL),('Gary','12345678',17,'Gary','Snail',18.00,37440.00,'Technician','2023-08-01',1,1,2,NULL),('MermaidMan','12345678',18,'Mermaid','Man',17.50,36400.00,'Foreman','2023-08-10',1,1,3,NULL),('BarnacleBoy','12345678',19,'Barnacle','Boy',10.50,21840.00,'Technician','2023-09-01',5,0,3,NULL),('KingNeptune','12345678',20,'King','Neptune',50.00,104000.00,'Technician','2023-09-15',NULL,1,3,NULL),('DirtyBubble','12345678',21,'Dirty','Bubble',9.50,19760.00,'Technician','2023-10-01',5,0,3,NULL),('JohnDoe','password123',37,'John','Doe',22.50,46800.00,'Foreman','2023-07-01',2,1,4,NULL),('JaneSmith','securepass',38,'Jane','Smith',25.75,53560.00,'Technician','2023-07-05',1,1,4,NULL),('MikeJohnson','mikepass',39,'Mike','Johnson',19.00,39520.00,'Technician','2023-07-10',5,1,4,NULL),('SarahWilson','sarah123',40,'Sarah','Wilson',21.25,44200.00,'Technician','2023-07-15',2,1,4,NULL),('DavidBrown','davidpass',41,'David','Brown',17.50,36400.00,'Technician','2023-07-20',5,1,4,NULL),('EmilyDavis','emily456',42,'Emily','Davis',23.00,47840.00,'Technician','2023-08-01',2,1,1,NULL),('RobertLee','robertpass',43,'Robert','Lee',26.50,55120.00,'Technician','2023-08-05',1,1,1,NULL),('LisaTaylor','lisa789',44,'Lisa','Taylor',20.00,41600.00,'Technician','2023-08-10',5,1,NULL,NULL),('ChrisMartin','chrispass',45,'Chris','Martin',24.25,50440.00,'Technician','2023-08-15',2,1,NULL,NULL),('AmyClark','amypass',46,'Amy','Clark',18.75,39000.00,'Technician','2023-08-20',5,1,NULL,NULL),('KevinWhite','kevin123',47,'Kevin','White',27.00,56160.00,'Technician','2023-09-01',1,1,NULL,NULL),('MichelleHall','michellepass',48,'Michelle','Hall',22.00,45760.00,'Technician','2023-09-05',2,1,NULL,NULL),('BrianScott','brian456',49,'Brian','Scott',19.50,40560.00,'Technician','2023-09-10',5,1,NULL,NULL),('JessicaKing','jessicapass',50,'Jessica','King',25.00,52000.00,'Technician','2023-09-15',2,1,NULL,NULL),('DanielYoung','daniel789',51,'Daniel','Young',28.50,59280.00,'Technician','2023-09-20',1,1,NULL,NULL);
+INSERT INTO `employees` VALUES ('EugeneK','12345678',1,'Eugene','Krab','manager','2023-01-02',0,NULL,'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkV1Z2VuZUsiLCJpYXQiOjE3NTcxNjQ1MzMsImV4cCI6MTc1NzI1MDkzM30.MPU4tGQy7wrYbwh2CtyjNq_f2Xq66z4riHST-ReTHmE'),('SquidwardT','12345678',2,'Squidward','Tentacles','Project Manager','2023-01-03',0,NULL,NULL),('SpongebobS','12345678',3,'Spongebob','Squarepants','Project Engineer','2024-01-04',0,1,NULL),('PatrickS','12345678',4,'Patrick','Star','Project Engineer','2023-01-05',0,2,NULL),('SandyC','12345678',5,'Sandy','Cheeks','Project Engineer','2023-01-06',0,3,'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhbmR5QyIsImlhdCI6MTc1NzA2OTkwMiwiZXhwIjoxNzU3MTU2MzAyfQ.ohtY5BhJeTJI2ljmCNvX1V_48N1W849lie0PBd3R8GU'),('SheldonP','12345678',6,'Sheldon','Plankton','Project Engineer','2023-01-07',0,4,NULL),('PearlK','12345678',7,'Pearl','Krabs','Project Engineer','2023-02-01',0,NULL,NULL),('KarenP','12345678',8,'Karen','Plankton','Project Engineer','2022-11-15',0,NULL,NULL),('LarryL','12345678',9,'Larry','Lobster','Project Engineer','2023-03-10',0,NULL,NULL),('NatP','12345678',10,'Nat','Peterson','Foreman','2023-04-05',1,1,NULL),('Tom','12345678',11,'Tom','Johnson','Technician','2023-05-12',1,1,NULL),('Fred','12345678',12,'Fred','Fish','Technician','2023-05-15',1,1,NULL),('Nebby','12345678',13,'Nebby','Star','Foreman','2023-06-01',1,2,NULL),('Barny','12345678',14,'Barny','Fish','Technician','2023-06-10',1,2,NULL),('Martha','12345678',15,'Marthanah','Starfish','Technician','2023-07-01',1,2,NULL),('Betsy','12345678',16,'Betsy','Krabs','Technician','2023-07-15',1,2,NULL),('Gary','12345678',17,'Gary','Snail','Technician','2023-08-01',1,2,NULL),('MermaidMan','12345678',18,'Mermaid','Man','Foreman','2023-08-10',1,3,NULL),('BarnacleBoy','12345678',19,'Barnacle','Boy','Technician','2023-09-01',0,3,NULL),('KingNeptune','12345678',20,'King','Neptune','Technician','2023-09-15',1,3,NULL),('DirtyBubble','12345678',21,'Dirty','Bubble','Technician','2023-10-01',0,3,NULL),('JohnDoe','password123',37,'John','Doe','Foreman','2023-07-01',1,4,NULL),('JaneSmith','securepass',38,'Jane','Smith','Technician','2023-07-05',1,4,NULL),('MikeJohnson','mikepass',39,'Mike','Johnson','Technician','2023-07-10',1,4,NULL),('SarahWilson','sarah123',40,'Sarah','Wilson','Technician','2023-07-15',1,4,NULL),('DavidBrown','davidpass',41,'David','Brown','Technician','2023-07-20',1,4,NULL),('EmilyDavis','emily456',42,'Emily','Davis','Technician','2023-08-01',1,1,NULL),('RobertLee','robertpass',43,'Robert','Lee','Technician','2023-08-05',1,1,NULL),('LisaTaylor','lisa789',44,'Lisa','Taylor','Technician','2023-08-10',0,NULL,NULL),('ChrisMartin','chrispass',45,'Chris','Martin','Technician','2023-08-15',0,NULL,NULL),('AmyClark','amypass',46,'Amy','Clark','Technician','2023-08-20',0,NULL,NULL),('KevinWhite','kevin123',47,'Kevin','White','Technician','2023-09-01',0,NULL,NULL),('MichelleHall','michellepass',48,'Michelle','Hall','Technician','2023-09-05',0,NULL,NULL),('BrianScott','brian456',49,'Brian','Scott','Technician','2023-09-10',0,NULL,NULL),('JessicaKing','jessicapass',50,'Jessica','King','Technician','2023-09-15',0,NULL,NULL),('DanielYoung','daniel789',51,'Daniel','Young','Technician','2023-09-20',0,NULL,NULL),('JohnD','12345678',52,'Ray','Ban','Foreman','2023-04-10',1,NULL,NULL),('MichaelB','12345678',53,'Michael','Brown','Foreman','2023-04-12',1,NULL,NULL),('DavidW','12345678',54,'David','Williams','Foreman','2023-04-15',1,NULL,NULL),('ChrisT','12345678',55,'Chris','Taylor','Foreman','2023-04-18',1,NULL,NULL),('AnthonyM','12345678',56,'Anthony','Miller','Foreman','2023-04-20',1,NULL,NULL),('RyanLee','ryanpass123',57,'Ryan','Lee','Technician','2023-10-01',0,NULL,NULL),('SarahBrown','sarah456',58,'Sarah','Brown','Technician','2023-10-05',0,NULL,NULL),('JasonChen','jasonpass',59,'Jason','Chen','Technician','2023-10-10',0,NULL,NULL),('EmilyWright','emily789',60,'Emily','Wright','Technician','2023-10-15',0,NULL,NULL),('MichaelTurner','mike123',61,'Michael','Turner','Technician','2023-10-20',0,NULL,NULL),('OliviaParker','olivia456',62,'Olivia','Parker','Technician','2023-10-25',0,NULL,NULL),('DavidMiller','davidpass',63,'David','Miller','Technician','2023-11-01',0,NULL,NULL),('SophiaGarcia','sophia789',64,'Sophia','Garcia','Technician','2023-11-05',0,NULL,NULL),('AndrewHill','andrew123',65,'Andrew','Hill','Technician','2023-11-10',0,NULL,NULL),('GraceLewis','grace456',66,'Grace','Lewis','Technician','2023-11-15',0,NULL,NULL),('JoshuaWalker','joshua789',67,'Joshua','Walker','Technician','2023-11-20',0,NULL,NULL),('ChloeRobinson','chloe123',68,'Chloe','Robinson','Technician','2023-11-25',0,NULL,NULL),('NicholasHall','nick456',69,'Nicholas','Hall','Technician','2023-12-01',0,NULL,NULL),('LilyAllen','lily789',70,'Lily','Allen','Technician','2023-12-05',0,NULL,NULL),('TylerYoung','tyler123',71,'Tyler','Young','Technician','2023-12-10',0,NULL,NULL),('HannahKing','hannah456',72,'Hannah','King','Technician','2023-12-15',0,NULL,NULL),('BrandonScott','brandon789',73,'Brandon','Scott','Technician','2023-12-20',0,NULL,NULL),('AvaGreen','avapass123',74,'Ava','Green','Technician','2023-12-25',0,NULL,NULL),('JustinAdams','justin456',75,'Justin','Adams','Technician','2023-12-30',0,NULL,NULL),('MiaNelson','mia789',76,'Mia','Nelson','Technician','2024-01-04',0,NULL,NULL);
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `before_hourly_pay_insert` BEFORE INSERT ON `employees` FOR EACH ROW set new.salary = (new.hourly_pay * 2080) */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `after_salary_insert` AFTER INSERT ON `employees` FOR EACH ROW update expenses
-set expense_total = expense_total + new.salary
-where expense_name = "salaries" */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `before_hourly_pay_update` BEFORE UPDATE ON `employees` FOR EACH ROW set new.salary = (new.hourly_pay * 2080) */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `after_salary_update` AFTER UPDATE ON `employees` FOR EACH ROW update expenses
-set expense_total = expense_total + (new.salary - old.salary)
-where expense_name = "salaries" */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `after_salary_delete` AFTER DELETE ON `employees` FOR EACH ROW update expenses
-set expense_total = expense_total - old.salary
-where expense_name = "salaries" */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `expenses`
@@ -333,14 +344,14 @@ DROP TABLE IF EXISTS `team_members`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `team_members` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `team_id` int DEFAULT NULL,
+  `foreman_id` int DEFAULT NULL,
   `emp_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `team_id` (`team_id`),
   KEY `emp_id` (`emp_id`),
-  CONSTRAINT `team_members_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `teams` (`team_id`),
-  CONSTRAINT `team_members_ibfk_2` FOREIGN KEY (`emp_id`) REFERENCES `employees` (`employee_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `team_members_ibfk_3` (`foreman_id`),
+  CONSTRAINT `team_members_ibfk_2` FOREIGN KEY (`emp_id`) REFERENCES `employees` (`employee_id`),
+  CONSTRAINT `team_members_ibfk_3` FOREIGN KEY (`foreman_id`) REFERENCES `teams` (`team_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -349,61 +360,9 @@ CREATE TABLE `team_members` (
 
 LOCK TABLES `team_members` WRITE;
 /*!40000 ALTER TABLE `team_members` DISABLE KEYS */;
-INSERT INTO `team_members` VALUES (1,1,3),(2,1,10),(3,1,11),(4,1,12),(5,1,42),(6,1,43),(7,2,4),(8,2,13),(9,2,14),(10,2,15),(11,2,16),(12,2,17),(27,3,5),(28,3,18),(29,3,19),(30,3,20),(31,3,21),(32,4,6),(33,4,37),(34,4,38),(35,4,39),(36,4,40),(37,4,41);
+INSERT INTO `team_members` VALUES (2,1,10),(3,1,11),(4,1,12),(5,1,42),(6,1,43),(8,2,13),(9,2,14),(10,2,15),(11,2,16),(12,2,17),(28,3,18),(29,3,19),(30,3,20),(31,3,21),(33,4,37),(34,4,38),(35,4,39),(36,4,40),(37,4,41),(62,5,44),(63,5,45),(64,5,46),(65,5,47),(66,6,48),(67,6,49),(68,6,50),(69,6,51),(70,5,52),(71,6,53),(72,7,57),(73,7,58),(74,7,59),(75,7,60),(76,8,61),(77,8,62),(78,8,63),(79,8,64),(80,9,65),(81,9,66),(82,9,67),(83,9,68),(84,7,54),(85,8,55),(86,9,56);
 /*!40000 ALTER TABLE `team_members` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `trigger_name` AFTER INSERT ON `team_members` FOR EACH ROW BEGIN
-    -- SQL statements to be executed after each row insertion
-    update employees set team_id = NEW.team_id where employee_id = NEW.emp_id;
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `update_employee_team_id` AFTER UPDATE ON `team_members` FOR EACH ROW BEGIN
-	update employees e set e.team_id = NEW.team_id where employee_id = NEW.emp_id;
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `update_employee_team_id_null` AFTER UPDATE ON `team_members` FOR EACH ROW BEGIN
-	update employees e set e.team_id = null where not exists (select * from team_members b where e.employee_id = b.emp_id );
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `teams`
@@ -414,12 +373,15 @@ DROP TABLE IF EXISTS `teams`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `teams` (
   `team_id` int NOT NULL AUTO_INCREMENT,
-  `team_name` varchar(255) NOT NULL,
+  `Foreman` varchar(255) NOT NULL,
+  `foreman_id` int DEFAULT NULL,
   `project_id` int DEFAULT (NULL),
   PRIMARY KEY (`team_id`),
   KEY `project_id` (`project_id`),
-  CONSTRAINT `teams_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `foremanForeignKey` (`foreman_id`),
+  CONSTRAINT `teams_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`),
+  CONSTRAINT `teams_ibfk_2` FOREIGN KEY (`foreman_id`) REFERENCES `employees` (`employee_id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -428,7 +390,7 @@ CREATE TABLE `teams` (
 
 LOCK TABLES `teams` WRITE;
 /*!40000 ALTER TABLE `teams` DISABLE KEYS */;
-INSERT INTO `teams` VALUES (1,'Team Alpha',1),(2,'Team Beta',44),(3,'Team Charlie',45),(4,'Team Delta',46);
+INSERT INTO `teams` VALUES (1,'Nat Peterson',10,1),(2,'Nebby Star',13,44),(3,'Mermaid Man',18,45),(4,'John Doe',37,46),(5,'Ray Ban',52,NULL),(6,'Michael Brown',53,NULL),(7,'David Williams',54,NULL),(8,'Chris Taylor',55,NULL),(9,'Anthony Miller',56,NULL);
 /*!40000 ALTER TABLE `teams` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -504,4 +466,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-04 20:01:36
+-- Dump completed on 2025-09-08 23:41:26
